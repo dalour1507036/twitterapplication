@@ -1,8 +1,11 @@
 package com.example.twitterapplication.service.imp
 
-import com.example.twitterapplication.dto.TwitterPostDto
-import com.example.twitterapplication.mapper.DtoToInstance
-import com.example.twitterapplication.mapper.InstanceToDto
+import com.example.twitterapplication.dto.TwitterPostRequest
+import com.example.twitterapplication.dto.TwitterPostResponse
+import com.example.twitterapplication.mapper.toTwitterCommentResponse
+import com.example.twitterapplication.mapper.toTwitterPost
+import com.example.twitterapplication.mapper.toTwitterPostResponse
+import com.example.twitterapplication.mapper.toTwitterUserResponse
 import com.example.twitterapplication.model.TwitterPost
 import com.example.twitterapplication.repository.TwitterCommentRepo
 import com.example.twitterapplication.repository.TwitterPostRepo
@@ -13,8 +16,6 @@ import org.springframework.stereotype.Service
 @Service
 class TwitterPostServiceImp(
      private val twitterUserRepo: TwitterUserRepo,
-     private val dtoToInstance: DtoToInstance,
-     private val instanceToDto: InstanceToDto,
      private val twitterPostRepo: TwitterPostRepo,
     private val twitterCommentRepo: TwitterCommentRepo
 ) : TwitterPostService {
@@ -22,29 +23,37 @@ class TwitterPostServiceImp(
         return twitterPostRepo.findAll()
     }
 
-    override fun getTwitterPostById(id: Long): TwitterPostDto {
+    override fun getTwitterPostById(id: Long): TwitterPostResponse {
         val twitterPost =  twitterPostRepo.findById(id).orElse(null)
         val allCommentsInAPost = twitterCommentRepo.findByTwitterPost(twitterPost)
 
-        val allCommentsDtoInAPost = allCommentsInAPost.map { twitterComment ->
-            instanceToDto.twitterCommentToTwitterCommentDto(twitterComment)
+        val allCommentResponseInAPost = allCommentsInAPost.map { twitterComment ->
+            twitterComment.toTwitterCommentResponse()
         }
-        return TwitterPostDto(twitterPost.twitterPostContent, allCommentsDtoInAPost)
+        return TwitterPostResponse(
+            twitterPost.twitterPostContent,
+            twitterPost.twitterUser?.toTwitterUserResponse(),
+            allCommentResponseInAPost
+        )
+
     }
 
-    override fun getAllTwitterPostsByUserId(userId: Long): List<TwitterPostDto> {
+    override fun getAllTwitterPostsByUserId(userId: Long): List<TwitterPostResponse> {
         val twitterUser = twitterUserRepo.findById(userId).orElse(null)
         val allTwitterPostsByUserId = twitterPostRepo.findByTwitterUser(twitterUser)?: emptyList()
 
         return allTwitterPostsByUserId.map { twitterPost ->
-            instanceToDto.twitterPostToTwitterPostDto(twitterPost) }
+            twitterPost.toTwitterPostResponse()
+        }
     }
 
-    override fun createTwitterPost(twitterPostDto: TwitterPostDto, id: Long): TwitterPostDto {
+    override fun createTwitterPost(twitterPostRequest: TwitterPostRequest, id: Long): TwitterPostResponse {
         val twitterUser = twitterUserRepo.findById(id).orElse(null)
-        val twitterPost = TwitterPost(twitterPostDto.twitterPostContent, twitterUser)
+        //val twitterPost = TwitterPost(twitterPostDto.twitterPostContent, twitterUser)
+        val twitterPost: TwitterPost = twitterPostRequest.toTwitterPost()
+        twitterPost.twitterUser = twitterUser
 
-        return instanceToDto.twitterPostToTwitterPostDto(twitterPostRepo.save(twitterPost))
+        return twitterPostRepo.save(twitterPost).toTwitterPostResponse()
     }
 
     override fun updateTwitterPost(twitterPost: TwitterPost): TwitterPost {

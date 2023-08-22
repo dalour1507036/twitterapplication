@@ -1,7 +1,9 @@
 package com.example.twitterapplication.service.imp
 
-import com.example.twitterapplication.dto.TwitterUserDto
-import com.example.twitterapplication.mapper.InstanceToDto
+import com.example.twitterapplication.dto.TwitterUserRequest
+import com.example.twitterapplication.dto.TwitterUserResponse
+import com.example.twitterapplication.mapper.toTwitterUser
+import com.example.twitterapplication.mapper.toTwitterUserResponse
 import com.example.twitterapplication.model.TwitterUser
 import com.example.twitterapplication.repository.TwitterUserRepo
 import com.example.twitterapplication.service.TwitterUserService
@@ -11,29 +13,30 @@ import org.springframework.stereotype.Service
 @Service
 class TwitterUserServiceImp(
     private val passwordEncoder: PasswordEncoder,
-    private val twitterUserRepo: TwitterUserRepo,
-    private val instanceToDto: InstanceToDto
+    private val twitterUserRepo: TwitterUserRepo
 ) : TwitterUserService {
-    override fun getAllTwitterUsers(): List<TwitterUserDto> {
-        val allTwitterUserDto = twitterUserRepo.findAll().map { twitterUser ->
-            instanceToDto.twitterUserToTwitterUserDto(twitterUser)
+    override fun getAllTwitterUsers(): List<TwitterUserResponse> {
+        val allTwitterUserResponse = twitterUserRepo.findAll().map { twitterUser ->
+            twitterUser.toTwitterUserResponse()
         }
-        return allTwitterUserDto
+        return allTwitterUserResponse
     }
 
-    override fun getTwitterUserById(id: Long): TwitterUserDto {
+    override fun getTwitterUserById(id: Long): TwitterUserResponse {
         val twitterUser: TwitterUser = twitterUserRepo.findById(id).orElse(null)
-        return instanceToDto.twitterUserToTwitterUserDto(twitterUser)
+        return twitterUser.toTwitterUserResponse()
 
     }
 
-    override fun createTwitterUser(twitterUser: TwitterUser): TwitterUser {
+    override fun createTwitterUser(twitterUserRequest: TwitterUserRequest): TwitterUserResponse {
+        val twitterUser: TwitterUser = twitterUserRequest.toTwitterUser()
         twitterUser.password = passwordEncoder.encode(twitterUser.password)
-        return twitterUserRepo.save(twitterUser)
+        return twitterUserRepo.save(twitterUser).toTwitterUserResponse()
     }
 
-    override fun updateTwitterUser(twitterUser: TwitterUser): TwitterUser {
-        return twitterUserRepo.save(twitterUser)
+    override fun updateTwitterUser(twitterUserRequest: TwitterUserRequest): TwitterUserResponse {
+        val twitterUser: TwitterUser = twitterUserRequest.toTwitterUser()
+        return twitterUserRepo.save(twitterUser).toTwitterUserResponse()
     }
 
     override fun deleteTwitterUserById(id: Long){

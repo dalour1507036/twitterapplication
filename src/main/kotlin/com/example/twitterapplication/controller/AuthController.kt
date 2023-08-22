@@ -1,7 +1,7 @@
 package com.example.twitterapplication.controller
 
-import com.example.twitterapplication.dto.LogInRequestDto
-import com.example.twitterapplication.dto.LogInResponseDto
+import com.example.twitterapplication.dto.LogInRequest
+import com.example.twitterapplication.dto.LogInResponse
 import com.example.twitterapplication.security.JwtIssuer
 import com.example.twitterapplication.security.TwitterUserPrincipal
 import org.springframework.http.HttpStatus
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController
 @RestController
 class AuthController(private val jwtIssuer: JwtIssuer, private val authenticationManager: AuthenticationManager) {
     @PostMapping("/twitter-app/login")
-    fun login(@RequestBody @Validated logInRequestDto: LogInRequestDto): ResponseEntity<LogInResponseDto> {
+    fun login(@RequestBody @Validated logInRequestDto: LogInRequest): ResponseEntity<LogInResponse> {
         val authentication = authenticationManager.authenticate(
             UsernamePasswordAuthenticationToken(logInRequestDto.email,logInRequestDto.password)
         )
@@ -32,7 +32,7 @@ class AuthController(private val jwtIssuer: JwtIssuer, private val authenticatio
             .map { grantedAuthority -> grantedAuthority.authority }
             .toList()
 
-        val logInResponseDto = LogInResponseDto(jwtIssuer.jwtTokenIssuerForUser(
+        val logInResponseDto = LogInResponse(jwtIssuer.jwtTokenIssuerForUser(
             twitterUserPrincipal.userId,
             twitterUserPrincipal.email, roles )
         )

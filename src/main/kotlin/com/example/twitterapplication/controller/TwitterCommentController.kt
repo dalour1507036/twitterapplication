@@ -1,6 +1,7 @@
 package com.example.twitterapplication.controller
 
-import com.example.twitterapplication.dto.TwitterCommentDto
+import com.example.twitterapplication.dto.TwitterCommentRequest
+import com.example.twitterapplication.dto.TwitterCommentResponse
 import com.example.twitterapplication.security.TwitterUserPrincipal
 import com.example.twitterapplication.service.TwitterCommentService
 import org.springframework.http.HttpStatus
@@ -15,11 +16,11 @@ class TwitterCommentController(private val twitterCommentService: TwitterComment
     fun createTwitterUserCommentInTwitterPost(
         @AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal,
         @PathVariable postId: Long,
-        @RequestBody twitterCommentDto: TwitterCommentDto
-        ): ResponseEntity<TwitterCommentDto> {
+        @RequestBody twitterCommentRequest: TwitterCommentRequest
+        ): ResponseEntity<TwitterCommentResponse> {
 
         val createdTwitterComment = twitterCommentService.createTwitterUserCommentInTwitterPost(
-            twitterCommentDto,
+            twitterCommentRequest,
             twitterUserPrincipal.getTwitterUserId(),
             postId
         )

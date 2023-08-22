@@ -5,17 +5,6 @@ import javax.persistence.*
 @Entity
 @Table(name="twitter_posts")
 class TwitterPost {
-    constructor(
-        twitterPostContent: String,
-        twitterUser: TwitterUser?
-    ) {
-        this.twitterPostContent = twitterPostContent
-        this.twitterUser = twitterUser
-
-    }
-
-    constructor()
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0

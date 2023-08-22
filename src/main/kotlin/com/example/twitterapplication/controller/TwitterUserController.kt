@@ -1,7 +1,7 @@
 package com.example.twitterapplication.controller
 
-import com.example.twitterapplication.dto.TwitterUserDto
-import com.example.twitterapplication.model.TwitterUser
+import com.example.twitterapplication.dto.TwitterUserRequest
+import com.example.twitterapplication.dto.TwitterUserResponse
 import com.example.twitterapplication.service.TwitterUserService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -17,19 +17,19 @@ class TwitterUserController(private val twitterUserService: TwitterUserService) 
     }
 
     @GetMapping("/users")
-    fun userPage(): ResponseEntity<List<TwitterUserDto>> {
-        val twitterUsersLists: List<TwitterUserDto> = twitterUserService.getAllTwitterUsers()
+    fun userPage(): ResponseEntity<List<TwitterUserResponse>> {
+        val twitterUsersLists: List<TwitterUserResponse> = twitterUserService.getAllTwitterUsers()
         return ResponseEntity.status(HttpStatus.OK).body(twitterUsersLists)
     }
 
     @GetMapping("users/{userId}")
-    fun getTwitterUserById(@PathVariable userId: Long): ResponseEntity<TwitterUserDto> {
-        val twitterUserDto: TwitterUserDto = twitterUserService.getTwitterUserById(userId)
+    fun getTwitterUserById(@PathVariable userId: Long): ResponseEntity<TwitterUserResponse> {
+        val twitterUserDto: TwitterUserResponse = twitterUserService.getTwitterUserById(userId)
         return ResponseEntity.status(HttpStatus.OK).body(twitterUserDto)
     }
     @PostMapping("/users")
-    fun userCreate(@RequestBody twitterUser: TwitterUser): ResponseEntity<TwitterUser> {
-        val createdUser: TwitterUser = twitterUserService.createTwitterUser(twitterUser)
+    fun userCreate(@RequestBody twitterUserRequest: TwitterUserRequest): ResponseEntity<TwitterUserResponse> {
+        val createdUser: TwitterUserResponse = twitterUserService.createTwitterUser(twitterUserRequest)
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser)
     }
 }

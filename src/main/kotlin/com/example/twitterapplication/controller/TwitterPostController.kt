@@ -1,6 +1,7 @@
 package com.example.twitterapplication.controller
 
-import com.example.twitterapplication.dto.TwitterPostDto
+import com.example.twitterapplication.dto.TwitterPostRequest
+import com.example.twitterapplication.dto.TwitterPostResponse
 import com.example.twitterapplication.security.TwitterUserPrincipal
 import com.example.twitterapplication.service.TwitterPostService
 import org.springframework.http.HttpStatus
@@ -14,10 +15,10 @@ class TwitterPostController(private val twitterPostService: TwitterPostService) 
     @PostMapping("/posts")
     fun createTwitterPost(
         @AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal,
-        @RequestBody twitterPostDto: TwitterPostDto
-    ): ResponseEntity<TwitterPostDto> {
+        @RequestBody twitterPostRequest: TwitterPostRequest
+    ): ResponseEntity<TwitterPostResponse> {
         val createdTwitterPost = twitterPostService.createTwitterPost(
-            twitterPostDto,
+            twitterPostRequest,
             twitterUserPrincipal.getTwitterUserId()
         )
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTwitterPost)
@@ -26,7 +27,7 @@ class TwitterPostController(private val twitterPostService: TwitterPostService) 
     @GetMapping("/posts")
     fun getAllTwitterPostsByUserId(
         @AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal
-    ): ResponseEntity<List<TwitterPostDto>> {
+    ): ResponseEntity<List<TwitterPostResponse>> {
         val allTwitterPosts = twitterPostService.getAllTwitterPostsByUserId(
             twitterUserPrincipal.getTwitterUserId()
         )
@@ -38,7 +39,7 @@ class TwitterPostController(private val twitterPostService: TwitterPostService) 
 //        return twitterPostService.getAllTwitterPosts()
 //    }
     @GetMapping("/posts/{postId}")
-    fun getTwitterPostById(@PathVariable postId: Long): ResponseEntity<TwitterPostDto> {
+    fun getTwitterPostById(@PathVariable postId: Long): ResponseEntity<TwitterPostResponse> {
         val twitterPostDto = twitterPostService.getTwitterPostById(postId)
     return ResponseEntity.status(HttpStatus.OK).body(twitterPostDto)
     }
