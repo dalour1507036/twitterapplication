@@ -1,13 +1,12 @@
 package com.example.twitterapplication.service
 
-import com.example.twitterapplication.dto.TwitterUserRequest
-import com.example.twitterapplication.dto.TwitterUserResponse
+import com.example.twitterapplication.model.TwitterUser
 
 
 interface TwitterUserService {
-    fun getAllTwitterUsers(): List<TwitterUserResponse>
-    fun getTwitterUserById(id: Long): TwitterUserResponse
-    fun createTwitterUser(twitterUserRequest: TwitterUserRequest): TwitterUserResponse
-    fun updateTwitterUser(twitterUserRequest: TwitterUserRequest): TwitterUserResponse
+    fun getAllTwitterUsers(): List<TwitterUser>
+    fun getTwitterUserById(id: Long): TwitterUser
+    fun createTwitterUser(twitterUser: TwitterUser): TwitterUser
+    fun updateTwitterUser(twitterUser: TwitterUser): TwitterUser
     fun deleteTwitterUserById(id: Long)
 }

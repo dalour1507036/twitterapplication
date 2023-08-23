@@ -1,10 +1,7 @@
 package com.example.twitterapplication.service.imp
 
-import com.example.twitterapplication.dto.TwitterCommentRequest
-import com.example.twitterapplication.dto.TwitterCommentResponse
-import com.example.twitterapplication.mapper.toTwitterComment
-import com.example.twitterapplication.mapper.toTwitterCommentResponse
 import com.example.twitterapplication.model.TwitterComment
+import com.example.twitterapplication.model.TwitterPost
 import com.example.twitterapplication.repository.TwitterCommentRepo
 import com.example.twitterapplication.repository.TwitterPostRepo
 import com.example.twitterapplication.repository.TwitterUserRepo
@@ -18,17 +15,19 @@ class TwitterCommentServiceImp(
     private val twitterCommentRepo: TwitterCommentRepo
     ) : TwitterCommentService {
     override fun createTwitterUserCommentInTwitterPost(
-        twitterCommentRequest: TwitterCommentRequest,
+        twitterComment: TwitterComment,
         userId: Long,
         postId: Long
-    ): TwitterCommentResponse {
+    ): TwitterComment {
         val twitterUser = twitterUserRepo.findById(userId).orElse(null)
         val twitterPost = twitterPostRepo.findById(postId).orElse(null)
-        val twitterComment: TwitterComment = twitterCommentRequest.toTwitterComment()
         twitterComment.twitterUser = twitterUser
         twitterComment.twitterPost = twitterPost
 
-        return twitterCommentRepo.save(twitterComment).toTwitterCommentResponse()
+        return twitterCommentRepo.save(twitterComment)
+    }
 
+    override fun getTwitterCommentsByTwitterPost(twitterPost: TwitterPost): List<TwitterComment> {
+        return twitterCommentRepo.findByTwitterPost(twitterPost)
     }
 }

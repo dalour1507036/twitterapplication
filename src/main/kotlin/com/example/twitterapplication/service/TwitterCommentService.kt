@@ -1,13 +1,16 @@
 package com.example.twitterapplication.service
 
-import com.example.twitterapplication.dto.TwitterCommentRequest
-import com.example.twitterapplication.dto.TwitterCommentResponse
+import com.example.twitterapplication.model.TwitterComment
+import com.example.twitterapplication.model.TwitterPost
 
 
 interface TwitterCommentService {
     fun createTwitterUserCommentInTwitterPost(
-        twitterCommentRequest: TwitterCommentRequest,
+        twitterComment: TwitterComment,
         userId: Long,
         postId: Long
-        ): TwitterCommentResponse
+        ): TwitterComment
+    fun getTwitterCommentsByTwitterPost(
+        twitterPost: TwitterPost
+    ): List<TwitterComment>
 }
