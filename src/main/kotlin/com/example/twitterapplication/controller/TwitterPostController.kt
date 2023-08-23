@@ -6,12 +6,10 @@ import com.example.twitterapplication.mapper.toTwitterCommentResponse
 import com.example.twitterapplication.mapper.toTwitterPost
 import com.example.twitterapplication.mapper.toTwitterPostResponse
 import com.example.twitterapplication.mapper.toTwitterUserResponse
-import com.example.twitterapplication.security.TwitterUserPrincipal
 import com.example.twitterapplication.service.TwitterCommentService
 import com.example.twitterapplication.service.TwitterPostService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
-import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.web.bind.annotation.*
 
 @RestController
@@ -19,25 +17,23 @@ import org.springframework.web.bind.annotation.*
 class TwitterPostController(
     private val twitterPostService: TwitterPostService,
     private val twitterCommentService: TwitterCommentService
-) {
+): BaseController() {
     @PostMapping("/posts")
     fun createTwitterPost(
-        @AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal,
         @RequestBody twitterPostRequest: TwitterPostRequest
     ): ResponseEntity<TwitterPostResponse> {
         val createdTwitterPost = twitterPostService.createTwitterPost(
             twitterPostRequest.toTwitterPost(),
-            twitterUserPrincipal.getTwitterUserId()
+            currentUserId()
         ).toTwitterPostResponse()
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTwitterPost)
     }
 
     @GetMapping("/posts")
     fun getAllTwitterPostsByUserId(
-        @AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal
     ): ResponseEntity<List<TwitterPostResponse>> {
         val allTwitterPostsResponse = twitterPostService.getAllTwitterPostsByUserId(
-            twitterUserPrincipal.getTwitterUserId()
+        currentUserId()
         ).map { twitterPost ->
                 twitterPost.toTwitterPostResponse() }
 

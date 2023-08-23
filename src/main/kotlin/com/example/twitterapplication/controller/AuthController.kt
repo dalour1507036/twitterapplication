@@ -8,7 +8,6 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
-import org.springframework.security.core.annotation.AuthenticationPrincipal
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.GetMapping
@@ -17,7 +16,10 @@ import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-class AuthController(private val jwtIssuer: JwtIssuer, private val authenticationManager: AuthenticationManager) {
+class AuthController(
+    private val jwtIssuer: JwtIssuer,
+    private val authenticationManager: AuthenticationManager
+) :BaseController() {
     @PostMapping("/twitter-app/login")
     fun login(@RequestBody @Validated logInRequestDto: LogInRequest): ResponseEntity<LogInResponse> {
         val authentication = authenticationManager.authenticate(
@@ -41,10 +43,11 @@ class AuthController(private val jwtIssuer: JwtIssuer, private val authenticatio
     }
 
     @GetMapping("/secured")
-    fun securedLogIn(@AuthenticationPrincipal twitterUserPrincipal: TwitterUserPrincipal): ResponseEntity<String> {
+    fun securedLogIn(
+    ): ResponseEntity<String> {
         return ResponseEntity
             .status(HttpStatus.OK)
             .body("Authorized User with User ID - " +
-                    "${twitterUserPrincipal.userId} and email - ${twitterUserPrincipal.email} ")
+                    "${currentPrincipal().userId} and email - ${currentPrincipal().email} ")
     }
 }
