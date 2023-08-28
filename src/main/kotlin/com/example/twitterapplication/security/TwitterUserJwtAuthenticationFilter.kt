@@ -14,7 +14,6 @@ class TwitterUserJwtAuthenticationFilter(
     private val jwtDecoder: JwtDecoder,
     private val decodedJwtToTwitterUserPrincipal: DecodedJwtToTwitterUserPrincipal
 ) : OncePerRequestFilter() {
-
     override fun doFilterInternal(
         request: HttpServletRequest,
         response: HttpServletResponse,

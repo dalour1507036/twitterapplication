@@ -20,7 +20,6 @@ class DecodedJwtToTwitterUserPrincipal {
         if (claim.isNull || claim.isMissing) {
             return mutableListOf()
         }
-
         return claim.asList(SimpleGrantedAuthority::class.java).toMutableList()
     }
 }

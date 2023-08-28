@@ -30,7 +30,9 @@ class TwitterUserController(private val twitterUserService: TwitterUserService) 
     }
 
     @GetMapping("users/{userId}")
-    fun getTwitterUserById(@PathVariable userId: Long): ResponseEntity<TwitterUserResponse> {
+    fun getTwitterUserById(
+        @PathVariable userId: Long
+        ): ResponseEntity<TwitterUserResponse> {
         val twitterUserResponse =
             twitterUserService
                 .getTwitterUserById(userId)
@@ -47,4 +49,5 @@ class TwitterUserController(private val twitterUserService: TwitterUserService) 
                 .toTwitterUserResponse()
         return ResponseEntity.status(HttpStatus.CREATED).body(createdUser)
     }
+
 }

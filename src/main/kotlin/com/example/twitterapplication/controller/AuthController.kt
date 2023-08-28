@@ -21,9 +21,9 @@ class AuthController(
     private val authenticationManager: AuthenticationManager
 ) :BaseController() {
     @PostMapping("/twitter-app/login")
-    fun login(@RequestBody @Validated logInRequestDto: LogInRequest): ResponseEntity<LogInResponse> {
+    fun login(@RequestBody @Validated logInRequest: LogInRequest): ResponseEntity<LogInResponse> {
         val authentication = authenticationManager.authenticate(
-            UsernamePasswordAuthenticationToken(logInRequestDto.email,logInRequestDto.password)
+            UsernamePasswordAuthenticationToken(logInRequest.email,logInRequest.password)
         )
 
         SecurityContextHolder.getContext().authentication = authentication
@@ -36,9 +36,10 @@ class AuthController(
 
         val logInResponseDto = LogInResponse(jwtIssuer.jwtTokenIssuerForUser(
             twitterUserPrincipal.userId,
-            twitterUserPrincipal.email, roles )
+            twitterUserPrincipal.email,
+            roles
+            )
         )
-
         return ResponseEntity.status(HttpStatus.CREATED).body(logInResponseDto)
     }
 
@@ -48,6 +49,8 @@ class AuthController(
         return ResponseEntity
             .status(HttpStatus.OK)
             .body("Authorized User with User ID - " +
-                    "${currentPrincipal().userId} and email - ${currentPrincipal().email} ")
+                 "${currentPrincipal().userId} " +
+                 "and email - ${currentPrincipal().email} "
+            )
     }
 }

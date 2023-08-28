@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component
 
 @Component
 class JwtDecoder {
-
     fun decode(token: String): DecodedJWT {
         return JWT.require(Algorithm.HMAC256("secretkey"))
             .build()

@@ -6,7 +6,6 @@ import org.springframework.security.authentication.AbstractAuthenticationToken
 class TwitterUserPrincipalAuthenticationToken(
     private var twitterUserPrincipal: TwitterUserPrincipal) :
     AbstractAuthenticationToken(twitterUserPrincipal.authorities) {
-
         override fun getCredentials(): Any {
         return ""
     }

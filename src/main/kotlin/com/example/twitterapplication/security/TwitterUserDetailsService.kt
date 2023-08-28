@@ -9,12 +9,14 @@ import org.springframework.stereotype.Service
 
 @Service
 class TwitterUserDetailsService(private val twitterUserRepo: TwitterUserRepo) : UserDetailsService {
-
     override fun loadUserByUsername(username: String?): UserDetails? {
         val twitterUser: TwitterUser? = username?.let { twitterUserRepo.findByEmail(it) }
 
         if (twitterUser != null) {
-            return TwitterUserPrincipal(twitterUser.id, twitterUser.email, twitterUser.password,
+            return TwitterUserPrincipal(
+                twitterUser.id,
+                twitterUser.email,
+                twitterUser.password,
                 mutableListOf<SimpleGrantedAuthority>(SimpleGrantedAuthority("ROLE_USER")))
         }
             return null

@@ -20,8 +20,7 @@ class TwitterPostController(
 ): BaseController() {
     @PostMapping("/posts")
     fun createTwitterPost(
-        @RequestBody twitterPostRequest: TwitterPostRequest
-    ): ResponseEntity<TwitterPostResponse> {
+        @RequestBody twitterPostRequest: TwitterPostRequest): ResponseEntity<TwitterPostResponse> {
         val createdTwitterPost = twitterPostService.createTwitterPost(
             twitterPostRequest.toTwitterPost(),
             currentUserId()
@@ -30,12 +29,9 @@ class TwitterPostController(
     }
 
     @GetMapping("/posts")
-    fun getAllTwitterPostsByUserId(
-    ): ResponseEntity<List<TwitterPostResponse>> {
-        val allTwitterPostsResponse = twitterPostService.getAllTwitterPostsByUserId(
-        currentUserId()
-        ).map { twitterPost ->
-                twitterPost.toTwitterPostResponse() }
+    fun getAllTwitterPostsByUserId(): ResponseEntity<List<TwitterPostResponse>> {
+        val allTwitterPostsResponse = twitterPostService.getAllTwitterPostsByUserId(currentUserId())
+            .map { twitterPost -> twitterPost.toTwitterPostResponse() }
 
         return ResponseEntity.status(HttpStatus.OK).body(allTwitterPostsResponse)
     }

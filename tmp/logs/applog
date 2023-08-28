@@ -1,0 +1,26 @@
+[http-nio-8080-exec-6] INFO  [54e3f9cf-2f3d-4dd5-88a9-be5f186c448e] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-7] INFO  [49b1d79e-7111-450f-81e2-a5cbf09be2bf] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [49ccad41-236d-4fb1-93a2-e36d3b11153d] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 17492 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - No active profile set, falling back to 1 default profile: "default"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 4.384 seconds (JVM running for 4.993)
+[http-nio-8080-exec-1] INFO  [aa2bc1b2-e5f9-4750-9881-f7618f5ec0c1] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-6] INFO  [74217702-a525-41d0-8eba-b8dea8cc8f3c] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-4] INFO  [7304cdcf-0d49-49c1-9d87-5b731e8b52ea] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [b3217f44-31a2-4045-beb2-dd56ba9c2d6a] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 4452 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - No active profile set, falling back to 1 default profile: "default"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 2.567 seconds (JVM running for 1182.103)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 26068 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - No active profile set, falling back to 1 default profile: "default"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 4.561 seconds (JVM running for 5.292)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 26068 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - No active profile set, falling back to 1 default profile: "default"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 0.821 seconds (JVM running for 14.753)
+[http-nio-8080-exec-3] INFO  [72b38978-53c2-46a8-b56b-883d6d0860ac] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 26068 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - No active profile set, falling back to 1 default profile: "default"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 0.784 seconds (JVM running for 28.293)
+[http-nio-8080-exec-2] INFO  [07858dd6-ddfc-4bce-954d-e6dafbc83a89] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [590092d1-b209-493e-9841-e430951bcfc1] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-4] INFO  [05847105-af83-402b-9e76-1c9fc11f657b] c.e.t.config.TimingFilter - STAT LOG
