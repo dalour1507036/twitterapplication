@@ -1,0 +1,6 @@
+<appender name="CATALINA-FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${basedir}/tmp/logs/catalina</file>
+    <encoder>
+        <pattern>[%thread] %-5level [%X{logId}] %logger{36} - %msg%n</pattern>
+    </encoder>
+</appender>

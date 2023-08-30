@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+    <springProperty scope="context"
+                    name="basedir"
+                    source="server.tomcat.basedir"
+                    defaultValue="tmp/logs"
+    />
+    <include resource="logback/catalina-file-appender.xml"/>
+    <include resource="logback/stats-file-appender.xml"/>
+    <include resource="logback/stdout-appender.xml"/>
+
+    <appender name="ASYNC-CATALINA-FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="CATALINA-FILE"/>
+        <includeCallerData>true</includeCallerData>
+    </appender>
+
+    <appender name="ASYNC-STATS-FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STATS-FILE"/>
+        <includeCallerData>true</includeCallerData>
+    </appender>
+
+    <appender name="ASYNC-STDOUT" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STDOUT"/>
+        <includeCallerData>true</includeCallerData>
+    </appender>
+
+    <springProfile name="local">
+        <logger name="com.example.twitterapplication" level="INFO" additivity="false">
+            <appender-ref ref="ASYNC-STDOUT"/>
+        </logger>
+    </springProfile>
+
+
+     <logger name="com.example.twitterapplication" level="INFO" additivity="false">
+         <appender-ref ref="ASYNC-CATALINA-FILE"/>
+     </logger>
+
+    <logger name="com.example.twitterapplication" level="INFO" additivity="false">
+        <appender-ref ref="ASYNC-STATS-FILE"/>
+    </logger>
+
+
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="FILE"/>-->
+<!--    </root>-->
+
+</configuration>

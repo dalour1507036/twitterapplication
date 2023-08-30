@@ -1,0 +1,6 @@
+<appender name="STATS-FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${basedir}/tmp/logs/stats</file>
+    <encoder>
+        <pattern>%d{YYYY-MM-dd HH:mm:ss.SSS}|%X{logId}|%X{apiMethod}|%X{apiUrl}|%X{status}|%X{hitTime}|%X{endTime}|%X{executionTime}%n</pattern>
+    </encoder>
+</appender>
