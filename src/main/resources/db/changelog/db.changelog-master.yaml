@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: classpath:/db/changelog/changes/user.sql
+  - include:
+      file: classpath:/db/changelog/changes/post.sql
+  - include:
+      file: classpath:/db/changelog/changes/comment.sql

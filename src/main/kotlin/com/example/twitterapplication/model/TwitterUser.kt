@@ -3,7 +3,7 @@ package com.example.twitterapplication.model
 import javax.persistence.*
 
 @Entity
-@Table(name="twitter_users")
+@Table(name="users")
 class TwitterUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,6 @@ class TwitterUser {
     @OneToMany(mappedBy = "twitterUser", cascade = [CascadeType.ALL])
     var twitterPosts: List<TwitterPost> = arrayListOf()
 
-    @OneToMany(mappedBy ="twitterUser", cascade = [CascadeType.ALL] )
+    @OneToMany(mappedBy ="twitterUser", cascade = [CascadeType.ALL])
      var twitterComments: List<TwitterComment> = arrayListOf()
 }

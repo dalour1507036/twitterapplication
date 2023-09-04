@@ -3,7 +3,7 @@ package com.example.twitterapplication.model
 import javax.persistence.*
 
 @Entity
-@Table(name = "comments")
+@Table(name = "twitter_comments")
 class TwitterComment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
