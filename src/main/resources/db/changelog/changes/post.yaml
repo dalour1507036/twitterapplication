@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: saeed.dalour
+      changes:
+        - createTable:
+            tableName: posts
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: twitter_post_content
+                  type: VARCHAR(1000)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: twitter_user_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_posts_users
+                    references: users(id)
+                    onDelete: CASCADE
+                    onUpdate: CASCADE

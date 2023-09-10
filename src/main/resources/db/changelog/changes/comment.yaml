@@ -1,0 +1,36 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: saeed.dalour
+      changes:
+        - createTable:
+            tableName: twitter_comments
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: content
+                  type: VARCHAR(4000)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_twitter_comments_users
+                    references: users(id)
+                    onDelete: NO ACTION
+                    onUpdate: NO ACTION
+              - column:
+                  name: post_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_twitter_comments_posts
+                    references: posts(id)
+                    onDelete: CASCADE
+                    onUpdate: CASCADE

@@ -1,7 +1,7 @@
 databaseChangeLog:
   - include:
-      file: classpath:/db/changelog/changes/user.sql
+      file: classpath:/db/changelog/changes/user.yaml
   - include:
-      file: classpath:/db/changelog/changes/post.sql
+      file: classpath:/db/changelog/changes/post.yaml
   - include:
-      file: classpath:/db/changelog/changes/comment.sql
+      file: classpath:/db/changelog/changes/comment.yaml
