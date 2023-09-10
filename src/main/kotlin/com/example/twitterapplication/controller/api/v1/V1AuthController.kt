@@ -1,5 +1,6 @@
-package com.example.twitterapplication.controller
+package com.example.twitterapplication.controller.api.v1
 
+import com.example.twitterapplication.controller.api.BaseController
 import com.example.twitterapplication.dto.LogInRequest
 import com.example.twitterapplication.dto.LogInResponse
 import com.example.twitterapplication.security.JwtIssuer
@@ -10,17 +11,15 @@ import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
 import org.springframework.validation.annotation.Validated
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PostMapping
-import org.springframework.web.bind.annotation.RequestBody
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.web.bind.annotation.*
 
 @RestController
-class AuthController(
+@RequestMapping("/api/v1/twitter-app/auth")
+class V1AuthController(
     private val jwtIssuer: JwtIssuer,
     private val authenticationManager: AuthenticationManager
-) :BaseController() {
-    @PostMapping("/twitter-app/login")
+) : BaseController() {
+    @PostMapping("/login")
     fun login(@RequestBody @Validated logInRequest: LogInRequest): ResponseEntity<LogInResponse> {
         val authentication = authenticationManager.authenticate(
             UsernamePasswordAuthenticationToken(logInRequest.email,logInRequest.password)

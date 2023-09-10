@@ -1,4 +1,4 @@
-package com.example.twitterapplication.controller
+package com.example.twitterapplication.controller.api.v1
 
 import org.springframework.context.annotation.Profile
 import org.springframework.http.HttpStatus
@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("twitter-app")
+@RequestMapping("/api/v1/twitter-app")
 @Profile("test")
-class TestEnvController {
+class V1TestEnvController {
     @GetMapping("/testenv")
     fun testEnv(): ResponseEntity<String> {
         return ResponseEntity.status(HttpStatus.OK).body(
-            "You are seeing this message when the application in test mode noly"
+            "You are seeing this message when the application in test mode only"
         )
     }
 }

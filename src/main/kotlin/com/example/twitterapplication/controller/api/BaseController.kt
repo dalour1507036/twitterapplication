@@ -1,4 +1,4 @@
-package com.example.twitterapplication.controller
+package com.example.twitterapplication.controller.api
 
 import com.example.twitterapplication.security.TwitterUserPrincipal
 import org.springframework.security.core.context.SecurityContextHolder

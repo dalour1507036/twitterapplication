@@ -10,39 +10,24 @@
     <include resource="logback/stats-file-appender.xml"/>
     <include resource="logback/stdout-appender.xml"/>
 
-    <appender name="ASYNC-CATALINA-FILE" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="CATALINA-FILE"/>
-        <includeCallerData>true</includeCallerData>
-    </appender>
-
-    <appender name="ASYNC-STATS-FILE" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="STATS-FILE"/>
-        <includeCallerData>true</includeCallerData>
-    </appender>
-
-    <appender name="ASYNC-STDOUT" class="ch.qos.logback.classic.AsyncAppender">
-        <appender-ref ref="STDOUT"/>
-        <includeCallerData>true</includeCallerData>
-    </appender>
-
     <springProfile name="local">
         <logger name="com.example.twitterapplication" level="DEBUG" additivity="false">
-            <appender-ref ref="ASYNC-STDOUT"/>
+            <appender-ref ref="STDOUT"/>
         </logger>
     </springProfile>
 
 
      <logger name="com.example.twitterapplication" level="INFO" additivity="false">
-         <appender-ref ref="ASYNC-CATALINA-FILE"/>
+         <appender-ref ref="CATALINA-FILE"/>
      </logger>
 
     <logger name="com.example.twitterapplication" level="INFO" additivity="false">
-        <appender-ref ref="ASYNC-STATS-FILE"/>
+        <appender-ref ref="STATS-FILE"/>
     </logger>
 
 
     <root level="INFO">
-        <appender-ref ref="ASYNC-STDOUT"/>
+        <appender-ref ref="STDOUT"/>
     </root>
 
 </configuration>

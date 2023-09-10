@@ -1,5 +1,6 @@
-package com.example.twitterapplication.controller
+package com.example.twitterapplication.controller.api.v1
 
+import com.example.twitterapplication.controller.api.BaseController
 import com.example.twitterapplication.dto.TwitterPostRequest
 import com.example.twitterapplication.dto.TwitterPostResponse
 import com.example.twitterapplication.mapper.toTwitterCommentResponse
@@ -13,12 +14,12 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/twitter-app/")
-class TwitterPostController(
+@RequestMapping("/api/v1/twitter-app/posts")
+class V1TwitterPostController(
     private val twitterPostService: TwitterPostService,
     private val twitterCommentService: TwitterCommentService
 ): BaseController() {
-    @PostMapping("/posts")
+    @PostMapping
     fun createTwitterPost(
         @RequestBody twitterPostRequest: TwitterPostRequest): ResponseEntity<TwitterPostResponse> {
         val createdTwitterPost = twitterPostService.createTwitterPost(
@@ -28,7 +29,7 @@ class TwitterPostController(
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTwitterPost)
     }
 
-    @GetMapping("/posts")
+    @GetMapping
     fun getAllTwitterPostsByUserId(): ResponseEntity<List<TwitterPostResponse>> {
         val allTwitterPostsResponse = twitterPostService.getAllTwitterPostsByUserId(currentUserId())
             .map { twitterPost -> twitterPost.toTwitterPostResponse() }
@@ -36,7 +37,7 @@ class TwitterPostController(
         return ResponseEntity.status(HttpStatus.OK).body(allTwitterPostsResponse)
     }
 
-    @GetMapping("/posts/{postId}")
+    @GetMapping("/{postId}")
     fun getTwitterPostById(@PathVariable postId: Long): ResponseEntity<TwitterPostResponse> {
         val twitterPost = twitterPostService.getTwitterPostById(postId)
         val allCommentsInAPost = twitterCommentService.getTwitterCommentsByTwitterPost(twitterPost)
