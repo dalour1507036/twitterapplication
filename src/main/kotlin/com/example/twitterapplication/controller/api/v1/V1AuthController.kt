@@ -14,7 +14,7 @@ import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/v1/twitter-app/auth")
+@RequestMapping("/api/v1/auth")
 class V1AuthController(
     private val jwtIssuer: JwtIssuer,
     private val authenticationManager: AuthenticationManager

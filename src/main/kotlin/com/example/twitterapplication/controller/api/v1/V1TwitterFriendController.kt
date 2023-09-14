@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/v1/twitter-app/friends")
+@RequestMapping("/api/v1/friends")
 class V1TwitterFriendController(
         private val twitterFriendRequestService: TwitterFriendRequestService,
         private val twitterUserService: TwitterUserService

@@ -32,8 +32,8 @@ class SecurityConfiguration(
             .authorizeHttpRequests { registry ->
                 registry
                     .requestMatchers(AntPathRequestMatcher("/")).permitAll()
-                    .requestMatchers(AntPathRequestMatcher("/api/v1/twitter-app/**")).permitAll()
-                    .requestMatchers(AntPathRequestMatcher("/api/v1/twitter-app/login")).permitAll()
+                    .requestMatchers(AntPathRequestMatcher("/api/v1/**")).permitAll()
+                    .requestMatchers(AntPathRequestMatcher("/api/v1/login")).permitAll()
                     .anyRequest().authenticated()
             }
         return http.build()

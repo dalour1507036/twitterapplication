@@ -248,3 +248,12 @@
 2023-09-11 17:14:26.741|701e0d27-315a-433b-9648-1210ce5baa17|GET|http://localhost:8080/api/v1/twitter-app/friend-requests/users/1|405|17:14:26|17:14:26|2
 2023-09-11 17:14:53.159|14866f1e-da56-4759-b3be-97509b8f94ae|POST|http://localhost:8080/api/v1/twitter-app/friend-requests/users/1|201|17:14:53|17:14:53|24
 2023-09-11 17:15:08.253|d0fca770-6608-4b1d-be00-452a94124e5f|GET|http://localhost:8080/api/v1/twitter-app/friend-requests/incoming|200|17:15:08|17:15:08|15
+2023-09-14 15:11:39.233|||||||
+2023-09-14 15:11:39.236|||||||
+2023-09-14 15:11:49.447|||||||
+2023-09-14 15:32:01.593|34216aa4-d289-4c58-a838-0c2891bd2e4b|GET|http://localhost:8080/api/v1/twitter-app/users|200|15:32:00|15:32:01|657
+2023-09-14 15:38:15.976|10588a1e-7372-4c4f-8d14-7e842c5bd4f0|POST|http://localhost:8080/api/v1/twitter-app/auth/login|201|15:38:15|15:38:15|803
+2023-09-14 15:41:02.093|394d1edd-7ae3-48ee-a8b4-db820a44542c|GET|http://localhost:8080/twitter-app/users/search|404|15:41:02|15:41:02|17
+2023-09-14 15:42:11.081|f5d6b3f6-5e2d-4573-93dd-580dd603232d|GET|http://localhost:8080/api/v1/twitter-app/users/search|200|15:42:10|15:42:11|358
+2023-09-14 15:42:58.834|fe8237e9-0ad8-4f8f-9ea9-e3636ad4c3e4|GET|http://localhost:8080/api/v1/twitter-app/users/search|200|15:42:58|15:42:58|36
+2023-09-14 15:43:11.232|a3fe6a4c-1d84-461c-b786-0359e5c8f6b4|GET|http://localhost:8080/api/v1/twitter-app/users/search|200|15:43:11|15:43:11|31

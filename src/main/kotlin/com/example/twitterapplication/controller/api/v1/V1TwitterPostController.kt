@@ -14,7 +14,7 @@ import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("/api/v1/twitter-app/posts")
+@RequestMapping("/api/v1/posts")
 class V1TwitterPostController(
     private val twitterPostService: TwitterPostService,
     private val twitterCommentService: TwitterCommentService

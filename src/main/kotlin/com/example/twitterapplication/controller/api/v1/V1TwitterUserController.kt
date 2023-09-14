@@ -14,7 +14,7 @@ import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.*
 
 @Controller
-@RequestMapping("/api/v1/twitter-app/users")
+@RequestMapping("/api/v1/users")
 class V1TwitterUserController(
         private val twitterUserService: TwitterUserService,
         private val twitterFriendRequestService: TwitterFriendRequestService

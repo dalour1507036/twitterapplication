@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api/v1/twitter-app")
+@RequestMapping("/api/v1")
 @Profile("test")
 class V1TestEnvController {
     @GetMapping("/testenv")
