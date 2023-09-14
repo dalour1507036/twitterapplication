@@ -23,6 +23,10 @@ class TwitterUserServiceImp(
         return twitterUserRepo.findById(id).orElse(null)
     }
 
+    override fun getTwitterUserByEmail(email: String): TwitterUser? {
+        return twitterUserRepo.findByEmail(email)
+    }
+
     override fun createTwitterUser(twitterUser: TwitterUser): TwitterUser {
         twitterUser.password = passwordEncoder.encode(twitterUser.password)
         return twitterUserRepo.save(twitterUser)

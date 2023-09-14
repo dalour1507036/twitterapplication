@@ -192,3 +192,84 @@
 [http-nio-8080-exec-6] INFO  [5dc3b459-aa80-4001-a9f2-436b00453442] c.e.t.config.TimingFilter - STAT LOG
 [http-nio-8080-exec-5] INFO  [db914acb-8958-4777-83c5-c25da7239414] c.e.t.config.TimingFilter - STAT LOG
 [http-nio-8080-exec-7] INFO  [854c88ab-765c-4acd-a6d5-6ddbde8c3924] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 29732 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 10.964 seconds (JVM running for 11.893)
+[http-nio-8080-exec-7] INFO  [5c1c1186-0a13-4864-91b6-ea2012ea92e0] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [8a92a50a-a094-4807-874c-77ed2f162588] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [3a64fa3b-3520-4616-b97a-72abc9865bf9] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-1] INFO  [3427529a-a065-4a3f-8dc4-1a7500168325] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-2] INFO  [592333f2-e885-4600-97e0-07d24a6a82e4] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [fe20a240-02cd-433c-b97d-a07e39e829e7] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-6] INFO  [426c5b5d-3c89-4cbc-8060-5d9c0b3dbd7a] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 23064 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 10.066 seconds (JVM running for 10.886)
+[http-nio-8080-exec-1] INFO  [949135ea-e034-4b0b-92d2-b5f94a859de1] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [c5625bce-0694-4ca2-9356-605360e42c0b] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-7] INFO  [45bd8324-9957-4ab2-aad1-8cbb9663558b] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-6] INFO  [d8673595-1aef-450b-a690-f5f09d55afd3] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [94ef33d2-8845-40cb-b7ee-648e02f68470] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-2] INFO  [7f4dba7e-9fdc-40e3-afe3-ff84d1e02429] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32444 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 8.039 seconds (JVM running for 8.531)
+[http-nio-8080-exec-1] INFO  [0bebe5c5-c940-4c97-8172-3bf329dfdc9f] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [ba73ecb6-7c57-4628-bcf9-e12ce1132e2f] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-6] INFO  [a9731348-1ab6-47e4-ba3c-b99320810af6] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-7] INFO  [21caa3ef-404b-4975-b7da-654c35e144cf] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32856 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 8.036 seconds (JVM running for 8.555)
+[http-nio-8080-exec-4] INFO  [e479ae00-0cfa-4c03-bead-d5b6b635f52c] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 36520 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 8.003 seconds (JVM running for 8.48)
+[http-nio-8080-exec-1] INFO  [129d17dc-572a-4e71-9a84-f1e1189d0987] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [eef7c912-9519-4c4d-a75b-481c0d1dd0f1] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [4f2a1094-eda0-401d-8fbc-faa359e040e7] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-2] INFO  [168c195f-b4b1-42d5-a705-adb5e9193696] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-1] INFO  [877fb55a-9b04-4186-8fe7-858f87f40bab] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 8988 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 7.576 seconds (JVM running for 8.11)
+[http-nio-8080-exec-2] INFO  [df2d0e63-8c7f-4c4e-a99b-15d618e6812f] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32748 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 9.401 seconds (JVM running for 9.954)
+[http-nio-8080-exec-2] INFO  [5e00055a-b787-4b6d-be48-94ab810c9713] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [990b5d20-ddf9-4021-873f-34d24c826b08] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [31be736e-56d6-4be3-99d7-8acf2782be99] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-9] INFO  [602c0b17-a82b-4fb3-8c94-f6d4f57443c4] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-10] INFO  [0e9b09dc-653f-4eb4-bb09-ac53693a3f4a] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-1] INFO  [69c8a21e-ac20-48e2-aaa7-97db75d1866a] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32524 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 7.609 seconds (JVM running for 8.113)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 21512 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 6.5 seconds (JVM running for 6.944)
+[http-nio-8080-exec-1] INFO  [83120e0d-2367-44a2-8e6e-975dee1c27c7] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 19988 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 6.297 seconds (JVM running for 6.895)
+[http-nio-8080-exec-2] INFO  [fa64d350-b8a5-437a-a79b-84cf534b54c6] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [4951a8a7-3c07-489b-9d9a-f2ea5360e76f] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-4] INFO  [285c1596-8dfd-4fbf-a3fb-ba650fe08e13] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [f08c7680-feb4-4675-b129-f31c58b93c16] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-6] INFO  [e30e1a8a-7961-4ebb-b517-b17b3867a79e] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-7] INFO  [47a27feb-615e-436e-b055-1794f33b530d] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [e734b3e1-d55a-4d6c-ab34-7836d551cf2f] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-9] INFO  [2c103387-7674-45ee-bb8c-363a270ddbf3] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-10] INFO  [b1b9ac2e-91ab-4a00-8e73-56d894e6adb0] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [b302419c-d1ab-4e93-8dda-c01131b28394] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-4] INFO  [2c699d1b-9492-408d-a1bf-287e848e06ea] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [b2300bfd-8a6b-4661-bdbd-0839eece0d16] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-10] INFO  [8bc5837b-9882-4332-abab-b71c642fa125] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-3] INFO  [ad8335f8-8671-4427-ab9c-79b7697a10aa] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-4] INFO  [d1c538cf-6ed2-4849-956c-c45d5420dd9f] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-5] INFO  [0751641c-7d96-4131-b790-32d2d447713e] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-8] INFO  [8b671e73-1780-469b-830f-7fa55592bdc4] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-9] INFO  [701e0d27-315a-433b-9648-1210ce5baa17] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-10] INFO  [14866f1e-da56-4759-b3be-97509b8f94ae] c.e.t.config.TimingFilter - STAT LOG
+[http-nio-8080-exec-1] INFO  [d0fca770-6608-4b1d-be00-452a94124e5f] c.e.t.config.TimingFilter - STAT LOG
