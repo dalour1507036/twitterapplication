@@ -11,7 +11,7 @@ interface TwitterFriendRequestService {
     fun canSend(userId: Long): Set<TwitterUser?>
     fun getAllFriends(userId: Long): List<TwitterUser>
     fun getAFriend(userObj:TwitterUser, friendObj: TwitterUser): TwitterUser?
-    fun getAIncoming(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest?
+    fun getIncoming(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest?
     fun getAOutgoing(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest?
 
 }

@@ -12,7 +12,7 @@
 
     <springProfile name="local">
         <logger name="com.example.twitterapplication" level="DEBUG" additivity="false">
-            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="STATS-FILE"/>
         </logger>
     </springProfile>
 

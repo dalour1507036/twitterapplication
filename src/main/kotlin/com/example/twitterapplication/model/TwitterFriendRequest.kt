@@ -16,3 +16,4 @@ class TwitterFriendRequest {
     lateinit var receiver: TwitterUser
     var accepted: Boolean = false
 }
+

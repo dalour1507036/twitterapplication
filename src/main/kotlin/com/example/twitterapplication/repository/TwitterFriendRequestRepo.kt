@@ -27,4 +27,8 @@ interface TwitterFriendRequestRepo : JpaRepository<TwitterFriendRequest, Long>{
             userObj: TwitterUser,
             friendObj: TwitterUser
     ): TwitterFriendRequest?
+    fun findByReceiverAndSender(
+            userObj: TwitterUser,
+            friendObj: TwitterUser
+    ): TwitterFriendRequest?
 }

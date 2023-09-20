@@ -37,7 +37,7 @@ class TwitterFriendRequestServiceImp(
                 .findBySenderAndAcceptedFalse(twitterUserRepo.findById(userId).orElse(null))
     }
 
-    override fun getAIncoming(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest? {
+    override fun getIncoming(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest? {
         return twitterFriendRequestRepo
                 .findByReceiverAndSenderAndAcceptedFalse(userObj, friendObj)
     }
