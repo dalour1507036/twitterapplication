@@ -1,75 +1,25 @@
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 39408 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 21328 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 22304 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 8.804 seconds (JVM running for 9.536)
+[http-nio-8080-exec-2] INFO  [b8a06c2d-e083-443b-95e5-9448eb982e61] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32732 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 30472 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32164 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 24888 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 25776 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 33680 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 31200 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 36684 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 13.425 seconds (JVM running for 14.544)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 32500 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 25952 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 12.025 seconds (JVM running for 13.057)
+[http-nio-8080-exec-4] INFO  [3061236c-ebc2-4d16-81ef-3cf5d9964117] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 31976 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 5864 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 13.119 seconds (JVM running for 14.14)
+[http-nio-8080-exec-5] INFO  [ba3a2526-c165-4709-b799-04e08aa8a796] c.e.t.config.TimingFilter - STAT LOG
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 18648 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
 [restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 35552 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 38788 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 10396 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 31016 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 19500 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 1372 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 5300 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 19308 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 19112 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 2576 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 15176 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 11904 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 15812 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 21248 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 13844 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 15172 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 20588 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 21640 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 8184 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 9652 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 19932 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 21044 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 20616 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 7244 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 10.531 seconds (JVM running for 11.261)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 18452 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 10.774 seconds (JVM running for 11.539)
-[http-nio-8080-exec-4] INFO  [5437af37-db91-4b0d-8fb1-52bbaa26e089] c.e.t.config.TimingFilter - STAT LOG
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 23256 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 9.362 seconds (JVM running for 9.998)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Starting TwitterapplicationApplicationKt using Java 17.0.8 on R50000294B with PID 10088 (E:\twitterapplication\target\classes started by saeed.dalour in E:\twitterapplication)
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - The following 1 profile is active: "local"
-[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 8.019 seconds (JVM running for 8.641)
+[restartedMain] INFO  [] c.e.t.TwitterapplicationApplicationKt - Started TwitterapplicationApplicationKt in 12.654 seconds (JVM running for 13.641)
+[http-nio-8080-exec-2] INFO  [90553412-d029-451a-a6c4-5f666896f064] c.e.t.config.TimingFilter - STAT LOG
