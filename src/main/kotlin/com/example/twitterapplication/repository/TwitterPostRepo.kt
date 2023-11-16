@@ -7,5 +7,6 @@ import org.springframework.stereotype.Repository
 
 @Repository
 interface TwitterPostRepo : JpaRepository<TwitterPost, Long> {
-    fun findByTwitterUser(twitterUser: TwitterUser): List<TwitterPost>
+    fun findByTwitterUserOrderByIdDesc(twitterUser: TwitterUser): List<TwitterPost>
+    fun findAllByOrderByIdDesc(): List<TwitterPost>
 }

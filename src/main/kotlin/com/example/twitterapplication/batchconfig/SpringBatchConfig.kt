@@ -1,6 +1,6 @@
 package com.example.twitterapplication.batchconfig
 
-import com.example.twitterapplication.model.BatchUser
+import com.example.twitterapplication.model.TwitterFriendRequest
 import com.example.twitterapplication.repository.BatchUserRepo
 import org.springframework.batch.core.Job
 import org.springframework.batch.core.Step
@@ -22,7 +22,6 @@ import org.springframework.core.task.SimpleAsyncTaskExecutor
 import org.springframework.core.task.TaskExecutor
 import javax.sql.DataSource
 
-
 @Configuration
 @EnableBatchProcessing
 class SpringBatchConfig(
@@ -33,13 +32,29 @@ class SpringBatchConfig(
         private val dataSource: DataSource
     ) {
     @Bean
-    fun reader(): FlatFileItemReader<BatchUser> {
-        val itemReader = FlatFileItemReader<BatchUser>()
-        itemReader.setResource(FileSystemResource("src/main/resources/tusers.csv"))
-        itemReader.name = "tusersReader"
+    fun reader(): FlatFileItemReader<TwitterFriendRequest> {
+        val itemReader = FlatFileItemReader<TwitterFriendRequest>()
+        itemReader.setResource(FileSystemResource("src/main/resources/twitter_friend_requests.csv"))
+        itemReader.name = "usersReader"
         itemReader.setLinesToSkip(1)
         itemReader.setLineMapper(lineMapper())
         return itemReader
+    }
+
+    fun lineMapper(): LineMapper<TwitterFriendRequest> {
+        val lineMapper = DefaultLineMapper<TwitterFriendRequest>()
+
+        val lineTokenizer = DelimitedLineTokenizer()
+        lineTokenizer.setDelimiter(",")
+        lineTokenizer.setStrict(false)
+        lineTokenizer.setNames("id","sender_id","receiver_id","accepted")
+
+        val fieldSetMapper = BeanWrapperFieldSetMapper<TwitterFriendRequest>()
+        fieldSetMapper.setTargetType(TwitterFriendRequest::class.java)
+
+        lineMapper.setLineTokenizer(lineTokenizer)
+        lineMapper.setFieldSetMapper(fieldSetMapper)
+        return lineMapper
     }
 
     @Bean
@@ -56,23 +71,23 @@ class SpringBatchConfig(
 //    }
 
     @Bean
-    fun writer(): JdbcBatchItemWriter<BatchUser> {
-        val itemWriter = JdbcBatchItemWriter<BatchUser>()
+    fun writer(): JdbcBatchItemWriter<TwitterFriendRequest> {
+        val itemWriter = JdbcBatchItemWriter<TwitterFriendRequest>()
         itemWriter.setDataSource(dataSource)
         itemWriter.setSql(
-                "INSERT INTO ttusers (id, first_name, last_name, email, password) VALUES (:id, :firstName, :lastName, :email, :password)"
+                "INSERT INTO twitter_friend_requests (sender_id, receiver_id, accepted) VALUES (:sender, :receiver, :accepted)"
         )
-        itemWriter.setItemSqlParameterSourceProvider (BeanPropertyItemSqlParameterSourceProvider<BatchUser>() )
+        itemWriter.setItemSqlParameterSourceProvider (BeanPropertyItemSqlParameterSourceProvider<TwitterFriendRequest>() )
         return itemWriter
     }
 
     @Bean
     fun step1(): Step {
-        return stepBuilderFactory["csv-step"].chunk<BatchUser,BatchUser>(1000)
+        return stepBuilderFactory["csv-step"].chunk<TwitterFriendRequest,TwitterFriendRequest>(1000)
                 .reader(reader())
                 .processor(processor())
                 .writer(writer())
-                .taskExecutor(taskExecutor())
+                //.taskExecutor(taskExecutor())
                 .build()
     }
 
@@ -87,21 +102,5 @@ class SpringBatchConfig(
         val asyncTaskExecutor = SimpleAsyncTaskExecutor()
         asyncTaskExecutor.concurrencyLimit = 10
         return asyncTaskExecutor
-    }
-
-    fun lineMapper(): LineMapper<BatchUser> {
-        val lineMapper = DefaultLineMapper<BatchUser>()
-
-        val lineTokenizer = DelimitedLineTokenizer()
-        lineTokenizer.setDelimiter(",")
-        lineTokenizer.setStrict(false)
-        lineTokenizer.setNames("id","first_name","last_name","email","password")
-
-        val fieldSetMapper = BeanWrapperFieldSetMapper<BatchUser>()
-        fieldSetMapper.setTargetType(BatchUser::class.java)
-
-        lineMapper.setLineTokenizer(lineTokenizer)
-        lineMapper.setFieldSetMapper(fieldSetMapper)
-        return lineMapper
     }
 }

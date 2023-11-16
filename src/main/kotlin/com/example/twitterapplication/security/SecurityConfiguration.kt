@@ -33,7 +33,7 @@ class SecurityConfiguration(
                 registry
                     .requestMatchers(AntPathRequestMatcher("/")).permitAll()
                     .requestMatchers(AntPathRequestMatcher("/api/v1/**")).permitAll()
-                    .requestMatchers(AntPathRequestMatcher("/api/v1/login")).permitAll()
+                    .requestMatchers(AntPathRequestMatcher("/api/v1/auth/login")).permitAll()
                     .anyRequest().authenticated()
             }
         return http.build()

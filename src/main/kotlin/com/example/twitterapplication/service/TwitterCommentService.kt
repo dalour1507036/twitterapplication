@@ -9,8 +9,14 @@ interface TwitterCommentService {
         twitterComment: TwitterComment,
         userId: Long,
         postId: Long
-        ): TwitterComment
+    ): TwitterComment
     fun getTwitterCommentsByTwitterPost(
         twitterPost: TwitterPost
     ): List<TwitterComment>
+
+    fun updateTwitterComment(
+        commentId: Long,
+        updatedTwitterComment: TwitterComment
+    ): TwitterComment
+    fun deleteTwitterComment(commentId: Long)
 }

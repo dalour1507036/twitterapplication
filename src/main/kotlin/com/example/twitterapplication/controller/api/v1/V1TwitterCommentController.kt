@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/v1/comments")
 class V1TwitterCommentController(private val twitterCommentService: TwitterCommentService)
@@ -18,7 +19,7 @@ class V1TwitterCommentController(private val twitterCommentService: TwitterComme
     fun createTwitterUserCommentInTwitterPost(
         @PathVariable postId: Long,
         @RequestBody twitterCommentRequest: TwitterCommentRequest
-        ): ResponseEntity<TwitterCommentResponse> {
+    ): ResponseEntity<TwitterCommentResponse> {
         val createdTwitterComment = twitterCommentService.createTwitterUserCommentInTwitterPost(
             twitterCommentRequest.toTwitterComment(),
             currentUserId(),
@@ -26,4 +27,22 @@ class V1TwitterCommentController(private val twitterCommentService: TwitterComme
         ).toTwitterCommentResponse()
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTwitterComment)
         }
+
+    @PutMapping("/{commentId}")
+    fun updateTwitterComment(
+        @PathVariable commentId:Long,
+        @RequestBody twitterCommentRequest: TwitterCommentRequest
+    ): ResponseEntity<TwitterCommentResponse> {
+        val updatedTwitterCommentResponse = twitterCommentService.updateTwitterComment(
+            commentId,
+            twitterCommentRequest.toTwitterComment()
+        ).toTwitterCommentResponse()
+        return ResponseEntity.status(HttpStatus.OK).body(updatedTwitterCommentResponse)
     }
+
+    @DeleteMapping("/{commentId}")
+    fun deleteTwitterComment(@PathVariable commentId: Long): ResponseEntity<String> {
+        twitterCommentService.deleteTwitterComment(commentId)
+        return ResponseEntity.status(HttpStatus.OK).body("Comment delete successfully")
+    }
+}

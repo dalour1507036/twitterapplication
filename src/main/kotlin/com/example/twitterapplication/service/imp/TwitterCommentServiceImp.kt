@@ -13,7 +13,7 @@ class TwitterCommentServiceImp(
     private val twitterUserRepo: TwitterUserRepo,
     private val twitterPostRepo: TwitterPostRepo,
     private val twitterCommentRepo: TwitterCommentRepo
-    ) : TwitterCommentService {
+) : TwitterCommentService {
     override fun createTwitterUserCommentInTwitterPost(
         twitterComment: TwitterComment,
         userId: Long,
@@ -29,5 +29,17 @@ class TwitterCommentServiceImp(
 
     override fun getTwitterCommentsByTwitterPost(twitterPost: TwitterPost): List<TwitterComment> {
         return twitterCommentRepo.findByTwitterPost(twitterPost)
+    }
+
+    override fun updateTwitterComment(
+        commentId: Long,
+        updatedTwitterComment: TwitterComment
+    ): TwitterComment {
+        val twitterComment = twitterCommentRepo.findById(commentId).orElse(null)
+        twitterComment.commentContent = updatedTwitterComment.commentContent
+        return twitterCommentRepo.save(twitterComment)
+    }
+    override fun deleteTwitterComment(commentId: Long) {
+        twitterCommentRepo.deleteById(commentId)
     }
 }

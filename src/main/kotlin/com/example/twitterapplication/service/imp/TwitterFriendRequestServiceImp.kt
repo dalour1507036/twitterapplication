@@ -1,5 +1,7 @@
 package com.example.twitterapplication.service.imp
 
+import com.example.twitterapplication.dto.FriendRequestAcceptedResponse
+import com.example.twitterapplication.mapper.toTwitterUserResponse
 import com.example.twitterapplication.model.TwitterFriendRequest
 import com.example.twitterapplication.model.TwitterUser
 import com.example.twitterapplication.repository.TwitterFriendRequestRepo
@@ -27,6 +29,10 @@ class TwitterFriendRequestServiceImp(
         return twitterFriendRequestRepo.save(twitterFriendRequest)
     }
 
+    override fun deleteFriendRequestInstanceById(friendRequestId: Long) {
+        twitterFriendRequestRepo.deleteById(friendRequestId)
+    }
+
     override fun getAllIncoming(userId: Long): List<TwitterFriendRequest> {
         return twitterFriendRequestRepo
                 .findByReceiverAndAcceptedFalse(twitterUserRepo.findById(userId).orElse(null))
@@ -42,12 +48,12 @@ class TwitterFriendRequestServiceImp(
                 .findByReceiverAndSenderAndAcceptedFalse(userObj, friendObj)
     }
 
-    override fun getAOutgoing(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest? {
+    override fun getOutgoing(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest? {
        return twitterFriendRequestRepo
                 .findBySenderAndReceiverAndAcceptedFalse(userObj, friendObj)
     }
 
-    override fun getAFriend(userObj:TwitterUser, friendObj: TwitterUser): TwitterUser? {
+    override fun getFriend(userObj:TwitterUser, friendObj: TwitterUser): TwitterFriendRequest? {
         val friendCase1 =
                 twitterFriendRequestRepo
                         .findBySenderAndReceiverAndAcceptedTrue(userObj, friendObj)
@@ -56,39 +62,52 @@ class TwitterFriendRequestServiceImp(
                          .findByReceiverAndSenderAndAcceptedTrue(userObj, friendObj)
 
         if (friendCase1 != null){
-            return friendCase1.receiver
+            return friendCase1
         }
-        return friendCase2?.sender
+        return friendCase2
 
+
+//    duplicate rows query
+//        return twitterFriendRequestRepo
+//                .findBySenderAndReceiverAndAcceptedTrue(
+//                        userObj, friendObj
+//                )?.receiver
+//
+//
     }
 
-    override fun canSend(userId: Long): Set<TwitterUser?> {
-        val allIncomingFriendRequestsNotAccepted =
-                getAllIncoming(userId)
-                        .map { twitterFriendRequest -> twitterFriendRequest.sender }
+//    override fun canSend(userId: Long): Set<TwitterUser?> {
+//        val allIncomingFriendRequestsNotAccepted =
+//                getAllIncoming(userId)
+//                        .map { twitterFriendRequest -> twitterFriendRequest.sender }
+//
+//        val allOutgoingFriendRequestsNotAccepted =
+//                getAllOutgoing(userId)
+//                        .map { twitterFriendRequest -> twitterFriendRequest.receiver }
+//
+//        val allFriends = getAllFriends(userId)
+//        return twitterUserRepo.findAll()
+//                .minus(listOf(twitterUserRepo.findById(userId).orElse(null)).toSet())
+//                .minus((allFriends+allOutgoingFriendRequestsNotAccepted +
+//                        allIncomingFriendRequestsNotAccepted +
+//                        allFriends).toSet()).toSet()
+//    }
 
-        val allOutgoingFriendRequestsNotAccepted =
-                getAllOutgoing(userId)
-                        .map { twitterFriendRequest -> twitterFriendRequest.receiver }
-
-        val allFriends = getAllFriends(userId)
-        return twitterUserRepo.findAll()
-                .minus(listOf(twitterUserRepo.findById(userId).orElse(null)).toSet())
-                .minus((allFriends+allOutgoingFriendRequestsNotAccepted +
-                        allIncomingFriendRequestsNotAccepted +
-                        allFriends).toSet()).toSet()
-    }
-
-    override fun getAllFriends(userId: Long): List<TwitterUser> {
+    override fun getAllFriends(userId: Long): List<FriendRequestAcceptedResponse> {
         val twitterUser = twitterUserRepo.findById(userId).orElse(null)
         val friendsFromIncomingRequests = twitterFriendRequestRepo
                 .findByReceiverAndAcceptedTrue(twitterUser)
-                .map { it.sender }
+                .map { FriendRequestAcceptedResponse(
+                    it.id,
+                    it.sender.toTwitterUserResponse()
+                ) }
 
         val friendsFromOutgoingRequests = twitterFriendRequestRepo
                 .findBySenderAndAcceptedTrue(twitterUser)
-                .map { it.receiver }
-
+                .map { FriendRequestAcceptedResponse(
+                    it.id,
+                    it.receiver.toTwitterUserResponse()
+                ) }
         return friendsFromIncomingRequests + friendsFromOutgoingRequests
     }
 }

@@ -22,4 +22,10 @@ class TwitterUser {
 
     @OneToMany(mappedBy ="twitterUser", cascade = [CascadeType.ALL])
      var twitterComments: List<TwitterComment> = arrayListOf()
+
+    @OneToMany(mappedBy = "sender", cascade = [CascadeType.ALL])
+    var friendRequestsWhenSender : List<TwitterFriendRequest> = arrayListOf()
+
+    @OneToMany(mappedBy = "receiver", cascade = [CascadeType.ALL])
+    var friendRequestsWhenReceiver : List<TwitterFriendRequest> = arrayListOf()
 }

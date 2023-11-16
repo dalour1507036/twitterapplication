@@ -3,7 +3,6 @@ package com.example.twitterapplication.mapper
 import com.example.twitterapplication.dto.TwitterUserRequest
 import com.example.twitterapplication.model.TwitterUser
 
-
 fun TwitterUserRequest.toTwitterUser(): TwitterUser {
 
     val entity = TwitterUser()

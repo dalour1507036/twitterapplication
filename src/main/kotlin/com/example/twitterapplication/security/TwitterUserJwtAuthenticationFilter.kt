@@ -23,8 +23,12 @@ class TwitterUserJwtAuthenticationFilter(
             .map(jwtDecoder::decode)
             .map(decodedJwtToTwitterUserPrincipal::convert)
             .map(::TwitterUserPrincipalAuthenticationToken)
-            .ifPresent { authentication -> SecurityContextHolder.getContext().authentication = authentication }
-
+            .ifPresent {
+                authentication ->
+                SecurityContextHolder
+                    .getContext()
+                    .authentication = authentication
+            }
         filterChain.doFilter(request,response)
     }
 

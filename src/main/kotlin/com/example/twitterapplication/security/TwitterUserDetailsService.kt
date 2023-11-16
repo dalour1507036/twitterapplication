@@ -17,7 +17,8 @@ class TwitterUserDetailsService(private val twitterUserRepo: TwitterUserRepo) : 
                 twitterUser.id,
                 twitterUser.email,
                 twitterUser.password,
-                mutableListOf<SimpleGrantedAuthority>(SimpleGrantedAuthority("ROLE_USER")))
+                mutableListOf<SimpleGrantedAuthority>(SimpleGrantedAuthority("ROLE_USER"))
+            )
         }
             return null
     }

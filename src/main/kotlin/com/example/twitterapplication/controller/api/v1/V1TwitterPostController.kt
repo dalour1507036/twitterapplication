@@ -13,6 +13,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
 
+@CrossOrigin(origins = ["http://localhost:3000"])
 @RestController
 @RequestMapping("/api/v1/posts")
 class V1TwitterPostController(
@@ -28,13 +29,36 @@ class V1TwitterPostController(
         ).toTwitterPostResponse()
         return ResponseEntity.status(HttpStatus.CREATED).body(createdTwitterPost)
     }
-
+//    @Transactional
     @GetMapping
     fun getAllTwitterPostsByUserId(): ResponseEntity<List<TwitterPostResponse>> {
         val allTwitterPostsResponse = twitterPostService.getAllTwitterPostsByUserId(currentUserId())
             .map { twitterPost -> twitterPost.toTwitterPostResponse() }
-
         return ResponseEntity.status(HttpStatus.OK).body(allTwitterPostsResponse)
+    }
+
+    @GetMapping("/all")
+    fun getAllTwitterPosts(): ResponseEntity<List<TwitterPostResponse>> {
+        val allTwitterPostResponse = twitterPostService.getAllTwitterPosts()
+            .map { twitterPost -> twitterPost.toTwitterPostResponse()  }
+        return ResponseEntity.status(HttpStatus.OK).body(allTwitterPostResponse)
+    }
+
+    @PutMapping("/{postId}")
+    fun updateTwitterPost(
+        @PathVariable postId: Long,
+        @RequestBody twitterPostRequest: TwitterPostRequest
+        ): ResponseEntity<TwitterPostResponse> {
+        val updatedTwitterPostResponse = twitterPostService.updateTwitterPost(
+            postId, twitterPostRequest.toTwitterPost()
+        ).toTwitterPostResponse()
+        return ResponseEntity.status(HttpStatus.OK).body(updatedTwitterPostResponse)
+    }
+
+    @DeleteMapping("/{postId}")
+    fun deleteTwitterPost(@PathVariable postId: Long): ResponseEntity<String> {
+        twitterPostService.deleteTwitterPostById(postId)
+        return ResponseEntity.status(HttpStatus.OK).body("Post deleted successfully")
     }
 
     @GetMapping("/{postId}")
@@ -43,13 +67,14 @@ class V1TwitterPostController(
         val allCommentsInAPost = twitterCommentService.getTwitterCommentsByTwitterPost(twitterPost)
 
         val allCommentResponseInAPost = allCommentsInAPost.map { twitterComment ->
-        twitterComment.toTwitterCommentResponse()
+            twitterComment.toTwitterCommentResponse()
         }
 
         val twitterPostResponse =  TwitterPostResponse(
-        twitterPost.twitterPostContent,
-        twitterPost.twitterUser?.toTwitterUserResponse(),
-        allCommentResponseInAPost
+            twitterPost.id,
+            twitterPost.twitterPostContent,
+            twitterPost.twitterUser?.toTwitterUserResponse(),
+            allCommentResponseInAPost
         )
         return ResponseEntity.status(HttpStatus.OK).body(twitterPostResponse)
     }

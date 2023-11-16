@@ -10,7 +10,7 @@ class TwitterPost {
     var id: Long = 0
     var twitterPostContent: String = ""
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     var twitterUser: TwitterUser? = null
 
     @OneToMany(mappedBy = "twitterPost", cascade = [CascadeType.ALL])
